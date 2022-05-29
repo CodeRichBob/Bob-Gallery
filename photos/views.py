@@ -3,7 +3,7 @@ from .models import Category,Photo,Location
 
 # Create your views here.
 
-def gallery(request):
+def galleryapp(request):
     location = request.GET.get('location')
 
     if location ==  None:
