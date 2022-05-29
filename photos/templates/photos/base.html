@@ -1,0 +1,35 @@
+{% load bootstrap5 %}
+{% load static%}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  {% if title %}
+  <title>Galleria - {{title}}</title>
+  {% else %}
+    <title> Galeria</title>
+  {% endif %}
+
+  {% block styles %}
+  {% bootstrap_css %}
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+{% endblock %}
+
+</head>
+<body>
+    {% include "navbar.html" %}
+
+    {% block content %}{%endblock%} 
+
+    {% include "footer.html" %}
+
+    {% block scripts %}
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script> {% bootstrap_javascript %}
+ <script src="{% static 'js/script.js' %}"></script>
+{% endblock %}
+</body>
+</html>
