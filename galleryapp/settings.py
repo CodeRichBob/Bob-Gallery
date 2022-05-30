@@ -11,6 +11,7 @@ from pathlib import Path
 import os
 from decouple import config,Csv
 import dj_database_url
+import django_heroku
 
 
 
@@ -112,7 +113,7 @@ db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 DATABASES['default'].update(db_from_env)
 
-# ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 
 # Password validation
@@ -172,4 +173,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Configure Django App for Heroku.
-# django_heroku.settings(locals())
+django_heroku.settings(locals())
