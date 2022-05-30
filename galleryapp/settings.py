@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+from decouple import config,Csv
 
 
 
@@ -86,23 +87,23 @@ WSGI_APPLICATION = 'galleryapp.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 # development
-# if config('MODE')=="dev":
+if config('MODE')=="dev":
 
-#     DATABASES = {
-#         'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'photos',
-#         'USER': 'robert',
-#     'PASSWORD':'@coderichbob1',
-#     }
-#     }
-# # production
-# else:
-#    DATABASES = {
-#        'default': dj_database_url.config(
-#            default=config('DATABASE_URL')
-#        )
-#    }
+    DATABASES = {
+        'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'photos',
+        'USER': 'robert',
+    'PASSWORD':'@coderichbob1',
+    }
+    }
+# production
+else:
+   DATABASES = {
+       'default': dj_database_url.config(
+           default=config('DATABASE_URL')
+       )
+   }
 
 # db_from_env = dj_database_url.config(conn_max_age=500)
 # DATABASES['default'].update(db_from_env)
