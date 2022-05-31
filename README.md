@@ -20,3 +20,22 @@ Gallery is a Photo Gallery application showcasing a collection of pictures built
 | View Single picture          | Click on photo of interest then click on image | Displays a single page with details of the picture and related images |
 
 <br>
+
+## Getting Started
+
+To clone the repository, run:
+
+    git clone https://github.com/CodeRichBob/Bob-Gallery.git
+
+Then navigating to the cloned directory:
+
+    cd Bob-Gallery
+
+### Prerequisite
+
+The Galleria project requires a prerequisite understanding of the following:
+
+- Django Framework
+- Python3.9
+- Postgres
+- Python virtualenv
