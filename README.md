@@ -65,3 +65,28 @@ Create .env file and paste paste the following filling where appropriate:
     USER = '<Username>'
     PASSWORD = '<password>'
     DEBUG = True
+
+#### Run initial Migration
+
+    python3.9 manage.py makemigrations gallery
+    python3.9 manage.py migrate
+
+#### Run the app
+
+    python3.9 manage.py runserver
+    Open terminal on localhost:8000
+
+## Deployment
+
+The application is deployed on Heroku and is live on this link:
+
+## Built With
+
+- [Django 4.0.4](https://docs.djangoproject.com/en/4.0/releases/4.0.4/) - Back end logic of the application.
+- [Pillow 9.1.1](https://pillow.readthedocs.io/en/stable/) - Used for image uploads.
+- Bootstrap4
+
+## Contributing
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code
+of conduct, and the process for submitting pull requests to us.
