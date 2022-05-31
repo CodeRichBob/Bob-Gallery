@@ -1,5 +1,6 @@
-# GALLERY
+# Bob-GALLERY
 
+<img src="./static/images/readme.png">
 ## Project Description
 
 Gallery is a Photo Gallery application showcasing a collection of pictures built using Python - Django.
