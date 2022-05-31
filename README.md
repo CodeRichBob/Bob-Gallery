@@ -39,3 +39,29 @@ The Galleria project requires a prerequisite understanding of the following:
 - Python3.9
 - Postgres
 - Python virtualenv
+
+## Setup and installation
+
+### Activate virtual environment
+
+Activate virtual environment using python3.9 as default handler
+`virtualenv -p /usr/bin/python3.9 genv && source genv/bin/activate`
+
+#### Install dependancies
+
+Install dependancies that will create an environment for the app to run `pip3 install -r requirements.txt`
+
+#### Create the Database
+
+    - psql
+    - CREATE DATABASE photos;
+
+#### .env file
+
+Create .env file and paste paste the following filling where appropriate:
+
+    SECRET_KEY = '<Secret_key>'
+    DBNAME = 'gallery'
+    USER = '<Username>'
+    PASSWORD = '<password>'
+    DEBUG = True
