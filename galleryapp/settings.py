@@ -12,6 +12,7 @@ import os
 from decouple import config,Csv
 import dj_database_url
 import django_heroku
+import cloudinary_storage
 
 
 
@@ -19,7 +20,7 @@ import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+MODE=config("MODE", default="dev")
 
 
 # Quick-start development settings - unsuitable for production
@@ -29,7 +30,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG =  True
+DEBUG = os.environ.get('DEBUG', True)
 ALLOWED_HOSTS = []
 
 
@@ -44,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'photos.apps.PhotosConfig',
     'bootstrap4',
+    'cloudinary_storage'
     
 
 ]
@@ -166,11 +168,14 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
-# CLOUDINARY_STORAGE = {
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dp1s0tm5v',
+    'API_KEY': config('CLOUD_API_KEY'),
+    'API_SECRET': config('CLOUD_API_SECRET')
     
-# }
+ }
 
-# DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Configure Django App for Heroku.
 django_heroku.settings(locals())
