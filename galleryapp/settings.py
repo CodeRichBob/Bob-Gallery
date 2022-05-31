@@ -12,7 +12,7 @@ import os
 from decouple import config,Csv
 import dj_database_url
 import django_heroku
-import cloudinary_storage
+# import cloudinary_storage
 
 
 
@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'photos.apps.PhotosConfig',
     'bootstrap4',
-    'cloudinary_storage'
+    # 'cloudinary_storage'
     
 
 ]
@@ -168,14 +168,14 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dp1s0tm5v',
-    'API_KEY': config('CLOUD_API_KEY'),
-    'API_SECRET': config('CLOUD_API_SECRET')
+# CLOUDINARY_STORAGE = {
+#     'CLOUD_NAME': 'dp1s0tm5v',
+#     'API_KEY': config('CLOUD_API_KEY'),
+#     'API_SECRET': config('CLOUD_API_SECRET')
     
- }
+#  }
 
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+# DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Configure Django App for Heroku.
 django_heroku.settings(locals())
